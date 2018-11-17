@@ -217,6 +217,7 @@
                 n.mounted &&
                   !s.a.findDOMNode(n).contains(e.target) &&
                   n.state.isOpen &&
+                  !n.props.dontTriggerAction &&
                   n.setState({ isOpen: !1 });
               }),
               (n.onClick = function() {
@@ -276,7 +277,7 @@
                       'button',
                       { className: 'title', onClick: this.onClick },
                       this.props.title,
-                      ' TESTING'
+                      ' [custom2]'
                     ),
                     u.a.createElement(
                       'div',
@@ -290,8 +291,8 @@
             t
           );
         })(c.Component);
-      (m.propTypes = { title: p.a.string }),
-        (m.defaultProps = { title: 'TITLE' }),
+      (m.propTypes = { title: p.a.string, dontTriggerAction: p.a.bool }),
+        (m.defaultProps = { title: 'TITLE', dontTriggerAction: !0 }),
         (t.a = m);
     },
     function(e, n) {

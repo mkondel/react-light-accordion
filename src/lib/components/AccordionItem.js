@@ -5,11 +5,13 @@ import classNames from 'classnames';
 
 class AccordionItem extends Component {
   static propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string,
+    dontTriggerAction: PropTypes.bool
   };
 
   static defaultProps = {
-    title: 'TITLE'
+    title: 'TITLE',
+    dontTriggerAction: true
   };
 
   constructor(props) {
@@ -22,7 +24,8 @@ class AccordionItem extends Component {
     if (
       this.mounted &&
       !ReactDOM.findDOMNode(this).contains(event.target) &&
-      this.state.isOpen
+      this.state.isOpen &&
+      !this.props.dontTriggerAction
     ) {
       this.setState({ isOpen: false });
     }
@@ -56,7 +59,7 @@ class AccordionItem extends Component {
     return (
       <div className={accordionItemClassNames}>
         <button className="title" onClick={this.onClick}>
-          {this.props.title} TESTING
+          {this.props.title} [custom2]
         </button>
         <div className="panel">{this.props.children}</div>
       </div>

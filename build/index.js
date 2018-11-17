@@ -276,8 +276,7 @@
                     u.a.createElement(
                       'button',
                       { className: 'title', onClick: this.onClick },
-                      this.props.title,
-                      ' [custom2]'
+                      this.props.title
                     ),
                     u.a.createElement(
                       'div',

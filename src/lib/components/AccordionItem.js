@@ -59,7 +59,7 @@ class AccordionItem extends Component {
     return (
       <div className={accordionItemClassNames}>
         <button className="title" onClick={this.onClick}>
-          {this.props.title} [custom2]
+          {this.props.title}
         </button>
         <div className="panel">{this.props.children}</div>
       </div>
